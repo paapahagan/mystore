@@ -1,10 +1,14 @@
+import { BsPlus, BsEyeFill } from "react-icons/bs";
+import { Link } from "react-router-dom";
+
 function Product({ product }) {
+  // eslint-disable-next-line react/prop-types
   const { id, title, image, category, price } = product;
   //   console.log(product);
   return (
     <div>
       {/* image */}
-      <section className=" border h-[300px] ">
+      <section className=" border h-[300px] relative overflow-hidden group transition-all ">
         <div className=" w-full h-full flex items-center">
           <div className=" mx-auto">
             <img
@@ -13,12 +17,28 @@ function Product({ product }) {
             />
           </div>
         </div>
+        {/* button */}
+        <div
+          className=" border p-1 absolute top-3 right-10 flex flex-col justify-center
+         gap-y-2 group-hover:right-5 group-hover:opacity-100 opacity-0 transition-all duration-500"
+        >
+          <button>
+            <div className=" border bg-red-400">
+              <BsPlus className="text-3xl" />
+            </div>
+          </button>
+
+          {/* link */}
+          <div>
+            <BsEyeFill className="text-3xl" />
+          </div>
+        </div>
       </section>
       {/* description */}
-      <div className="grid justify-items-center text-center m-2">
-        <div className="text-sm capitalize">{category}</div>
-        <p className=" font-semibold">{title}</p>
-        <p className=" font-semibold">${price}</p>
+      <div className="grid ">
+        <div className="text-sm text-gray-500 capitalize">{category}</div>
+        <p className="text-sm">{title}</p>
+        <p className=" font-semibold text-gray-500">${price}</p>
       </div>
     </div>
   );
