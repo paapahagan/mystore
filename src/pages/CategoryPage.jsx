@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BsEyeFill, BsPlus } from "react-icons/bs";
 
 function CategoryPage() {
   const { categoryId } = useParams();
+  const { id } = useParams();
   const [cats, setCats] = useState([]);
 
   const getCategoryId = async (categoryId) => {
@@ -18,6 +19,7 @@ function CategoryPage() {
       getCategoryId(categoryId);
     }
   }, [categoryId]);
+
   return (
     <div className=" container mx-auto py-16">
       <div className="py-5 capitalize text-5xl flex justify-center">
@@ -44,9 +46,9 @@ function CategoryPage() {
                   <button className=" bg-red-400">
                     <BsPlus className="text-3xl" />
                   </button>
-                  <button type="submit">
+                  <Link to={`/product/${id}`}>
                     <BsEyeFill className="text-3xl" />
-                  </button>
+                  </Link>
                 </div>
               </section>
               <div>

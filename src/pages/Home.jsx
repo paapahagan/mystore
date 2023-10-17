@@ -9,8 +9,10 @@ function Home() {
   const { categories } = useContext(CategoryContext);
 
   return (
-    <div className="">
-      <section className="py-10">
+    <div className="container mx-auto p-16">
+      {/* mini nav */}
+
+      {/* <section className="py-10">
         <div className=" container mx-auto flex justify-around capitalize">
           {categories?.map((x) => (
             <Link
@@ -22,9 +24,9 @@ function Home() {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
       <section className="">
-        <div className="container mx-auto ">
+        <div>
           <div className=" grid grid-cols-1 gap-x-4 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
             {products?.map((p) => (
               <Product product={p} key={p.id} />

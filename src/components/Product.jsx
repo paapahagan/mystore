@@ -1,12 +1,16 @@
+import { useContext } from "react";
 import { BsPlus, BsEyeFill } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import { CartContext } from "../context/CartContext";
 
+// eslint-disable-next-line react/prop-types
 function Product({ product }) {
+  const { addToCart } = useContext(CartContext);
   // eslint-disable-next-line react/prop-types
   const { id, title, image, category, price } = product;
   //   console.log(product);
   return (
-    <div>
+    <div className="container mx-auto ">
       {/* image */}
       <section className=" border h-[300px] relative overflow-hidden group transition-all ">
         <div className=" w-full h-full flex items-center">
@@ -22,16 +26,17 @@ function Product({ product }) {
           className=" border p-1 absolute top-3 right-10 flex flex-col justify-center
          gap-y-2 group-hover:right-5 group-hover:opacity-100 opacity-0 transition-all duration-500"
         >
-          <button>
+          {/* add to cart */}
+          <button onClick={() => addToCart(product, id)}>
             <div className=" border bg-red-400">
               <BsPlus className="text-3xl" />
             </div>
           </button>
 
           {/* link */}
-          <div>
+          <Link to={`/product/${id}`}>
             <BsEyeFill className="text-3xl" />
-          </div>
+          </Link>
         </div>
       </section>
       {/* description */}

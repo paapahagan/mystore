@@ -13,7 +13,6 @@ function CategoryProvider({ children }) {
       );
       const data = await response.json();
       setCategories(data);
-      console.log(data);
     };
     getCategory();
   }, []);
