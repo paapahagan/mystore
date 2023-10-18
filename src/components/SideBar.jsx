@@ -10,7 +10,7 @@ function SideBar() {
   return (
     <div
       className={`${isOpen ? "right-0" : "-right-full"}
-       bg-white fixed top-0 h-full md:w-[35vw] lg:w-96 xl:max-w[35vw] 
+       bg-white fixed top-0 h-full md:w-[36vw] lg:w-[35vw] xl:max-w[38vw] 
        transition-all duration-300 z-20 w-full shadow-2xl p-6`}
     >
       <div className="flex justify-between border-b py-4 ">

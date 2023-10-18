@@ -1,12 +1,12 @@
 import { useContext } from "react";
 import Product from "../components/Product";
 import { ProductContext } from "../context/ProductContext";
-import { CategoryContext } from "../context/CategoryContext";
-import { Link } from "react-router-dom";
+// import { CategoryContext } from "../context/CategoryContext";
+// import { Link } from "react-router-dom";
 
 function Home() {
   const { products } = useContext(ProductContext);
-  const { categories } = useContext(CategoryContext);
+  // const { categories } = useContext(CategoryContext);
 
   return (
     <div className="container mx-auto p-16">
